@@ -12,6 +12,7 @@ dependencies {
     implementation("com.eatthepath:pushy:0.14.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
+    implementation("org.slf4j:slf4j-simple:1.7.30")
     api("org.slf4j:slf4j-api:1.7.30")
     implementation(kotlin("script-runtime"))
 }

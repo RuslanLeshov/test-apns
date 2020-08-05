@@ -41,14 +41,6 @@ internal class NotificationServiceConfig(
                 keyId
             )
         )
-        .setTrustedServerCertificateChain(
-            trustedServerCertificateChainPath
-                ?.let {
-                    println("trustedServerCertificateChainPath: $trustedServerCertificateChainPath")
-                    this::class.java.classLoader.getResourceAsStream(trustedServerCertificateChainPath)
-                }
-
-        )
         .build()
 
 
@@ -85,7 +77,11 @@ fun main() {
         null,
         collapseId
     )
-    runBlocking {
+
+    val response = runBlocking {
         client.sendNotification(pushNotification).await()
     }
+
+    println(response.isAccepted)
+    println(response)
 }
